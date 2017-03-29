@@ -1,25 +1,24 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
 
-public class SmallTin extends Pack{
+public class MediumBag extends Pack {
+	private static final int MEDIUM_VOLUME = 500;
+	private static final int PACK_MASS = 25;
 
-	private static final int SMALL_VOLUME = 125;
-	private static final int PACK_MASS = 50;
-	
-	public SmallTin(Coffee coffee) {
-		super(SMALL_VOLUME, PACK_MASS, coffee);
+	public MediumBag(Coffee coffee) {
+		super(MEDIUM_VOLUME, PACK_MASS, coffee);
 	}
 
 	@Override
 	public int coffeeMassInPack() {
 		int coffeeMass = 0;
 		if (super.coffee.getState().equalsIgnoreCase("beans")) {
-			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_BEANS * SMALL_VOLUME);
+			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_BEANS * MEDIUM_VOLUME);
 		} else if (super.coffee.getState().equalsIgnoreCase("grind")) {
-			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_GRIND * SMALL_VOLUME);
+			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_GRIND * MEDIUM_VOLUME);
 		} else if (super.coffee.getState().equalsIgnoreCase("instant")) {
-			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_INSTANT * SMALL_VOLUME);
+			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_INSTANT * MEDIUM_VOLUME);
 		}
 		return coffeeMass;
 	}
@@ -29,11 +28,14 @@ public class SmallTin extends Pack{
 		int packPrice = coffeeMassInPack() * super.coffee.getGramPrice();
 		return packPrice;
 	}
-	
+
 	@Override
 	public int summaryMass() {
 		int summaryMass = PACK_MASS + coffeeMassInPack();
 		return summaryMass;
 	}
+	
+
+
 
 }

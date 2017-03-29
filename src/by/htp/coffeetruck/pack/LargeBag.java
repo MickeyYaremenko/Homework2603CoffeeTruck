@@ -1,6 +1,6 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
 
 public class LargeBag extends Pack {
 	private static final int LARGE_VOLUME = 1000;
@@ -35,5 +35,10 @@ public class LargeBag extends Pack {
 		int summaryMass = PACK_MASS + coffeeMassInPack();
 		return summaryMass;
 	}
+	
+//	@Override
+//	public String toString() {
+//		return "Pack [volume=" + super.getVolume() + ", pack price =" + packPrice() + ", coffee=" + coffee;
+//	}
 
 }

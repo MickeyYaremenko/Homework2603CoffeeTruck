@@ -1,25 +1,27 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
+import by.htp.coffeetruck.lockingmechanism.Lid;
 
-public class MediumTin extends Pack{
+public class SmallTin extends Pack{
 
-	private static final int MEDIUM_VOLUME = 250;
-	private static final int PACK_MASS = 75;
+	private static final int SMALL_VOLUME = 125;
+	private static final int PACK_MASS = 50;
+	private Lid lid;
 	
-	public MediumTin(Coffee coffee) {
-		super(MEDIUM_VOLUME, PACK_MASS, coffee);
+	public SmallTin(Coffee coffee) {
+		super(SMALL_VOLUME, PACK_MASS, coffee);
 	}
 
 	@Override
 	public int coffeeMassInPack() {
 		int coffeeMass = 0;
 		if (super.coffee.getState().equalsIgnoreCase("beans")) {
-			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_BEANS * MEDIUM_VOLUME);
+			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_BEANS * SMALL_VOLUME);
 		} else if (super.coffee.getState().equalsIgnoreCase("grind")) {
-			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_GRIND * MEDIUM_VOLUME);
+			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_GRIND * SMALL_VOLUME);
 		} else if (super.coffee.getState().equalsIgnoreCase("instant")) {
-			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_INSTANT * MEDIUM_VOLUME);
+			coffeeMass = (int) (VOLUME_TO_MASS_COEFF_INSTANT * SMALL_VOLUME);
 		}
 		return coffeeMass;
 	}
@@ -35,6 +37,5 @@ public class MediumTin extends Pack{
 		int summaryMass = PACK_MASS + coffeeMassInPack();
 		return summaryMass;
 	}
-
 
 }

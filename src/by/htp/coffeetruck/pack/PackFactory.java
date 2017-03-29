@@ -1,6 +1,6 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
 
 public class PackFactory {
 

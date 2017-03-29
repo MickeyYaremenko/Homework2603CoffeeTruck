@@ -1,10 +1,15 @@
-package by.htp.smth;
+package by.htp.coffeetruck.launcher;
 
-import by.htp.pack.PackFactory;
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
+import by.htp.coffeetruck.entity.Merchandiser;
+import by.htp.coffeetruck.entity.Truck;
+import by.htp.coffeetruck.pack.PackFactory;
 
-public class Maintest {
+public class Main {
 	public static void main(String[] args) {
+		PackFactory packFactory = new PackFactory();
+		Truck truck = new Truck(1300);
+		Merchandiser merchandiser = new Merchandiser();
 
 		Coffee lavazza = new Coffee(25, "Beans", "Arabica", "Lavazza");
 		Coffee jacobs = new Coffee(15, "Instant", "Arabica", "Jacobs");
@@ -13,9 +18,6 @@ public class Maintest {
 		Coffee jardin = new Coffee(12, "Beans", "Robusta", "Jardin");
 		Coffee illy = new Coffee(18, "Instant", "Robusta", "Illy");
 
-		PackFactory packFactory = new PackFactory();
-
-		Truck truck = new Truck(15000);
 		System.out.println("Current load: " + truck.getLoadWeight());
 
 		truck.loadNewPack(packFactory.createPack("medium bag", lavazza));
@@ -26,9 +28,13 @@ public class Maintest {
 		truck.loadNewPack(packFactory.createPack("large tin", illy));
 
 		System.out.println("Current load: " + truck.getLoadWeight());
-		
-		System.out.println(truck.packs[1]);
 
+		merchandiser.showPacksInRange(truck, 15, 45);
+		System.out.println("Primary truck:");
+		merchandiser.showAllCoffeeInTruck(truck);
+		System.out.println("Sorted truck:");
+		merchandiser.sortCoffeeByMoneyForGram(truck);
+		merchandiser.showAllCoffeeInTruck(truck);
 	}
 
 }

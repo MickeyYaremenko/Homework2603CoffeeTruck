@@ -1,11 +1,13 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
+import by.htp.coffeetruck.lockingmechanism.Lid;
 
 public class LargeTin extends Pack{
 
 	private static final int LARGE_VOLUME = 500;
 	private static final int PACK_MASS = 125;
+	private Lid lid;
 	
 	public LargeTin(Coffee coffee) {
 		super(LARGE_VOLUME, PACK_MASS, coffee);

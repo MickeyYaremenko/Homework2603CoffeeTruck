@@ -1,6 +1,6 @@
-package by.htp.smth;
+package by.htp.coffeetruck.entity;
 
-import by.htp.pack.Pack;
+import by.htp.coffeetruck.pack.Pack;
 
 public class Truck {
 	private final int capacity;
@@ -29,7 +29,7 @@ public class Truck {
 			packs = tempPacks;
 			this.loadWeight += pack.summaryMass();
 		} else {
-			System.out.println("Our truck is full! Sorry.");
+			System.out.println("Our truck is full! Failed to load new pack: " + pack + ". Sorry.");
 		}
 	}
 

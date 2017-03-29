@@ -1,10 +1,12 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
+import by.htp.coffeetruck.lockingmechanism.Ziplock;
 
 public class SmallBag extends Pack {
 	private static final int SMALL_VOLUME = 200;
 	private static final int PACK_MASS = 10;
+	private Ziplock ziplock;
 
 	public SmallBag(Coffee coffee) {
 		super(SMALL_VOLUME, PACK_MASS, coffee);

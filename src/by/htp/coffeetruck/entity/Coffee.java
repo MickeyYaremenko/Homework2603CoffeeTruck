@@ -1,4 +1,4 @@
-package by.htp.smth;
+package by.htp.coffeetruck.entity;
 
 public class Coffee {
 
@@ -8,7 +8,7 @@ public class Coffee {
 	private String brand;
 	
 	public Coffee(int gramPrice, String state, String sort, String brand) {
-		this.state = state;
+		this.gramPrice = gramPrice;
 		this.state = state;
 		this.sort = sort;
 		this.brand = brand;

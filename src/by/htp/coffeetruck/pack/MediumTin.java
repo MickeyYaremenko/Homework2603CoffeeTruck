@@ -1,12 +1,15 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
+import by.htp.coffeetruck.lockingmechanism.Lid;
 
-public class MediumBag extends Pack {
-	private static final int MEDIUM_VOLUME = 500;
-	private static final int PACK_MASS = 25;
+public class MediumTin extends Pack{
 
-	public MediumBag(Coffee coffee) {
+	private static final int MEDIUM_VOLUME = 250;
+	private static final int PACK_MASS = 75;
+	private Lid lid;
+	
+	public MediumTin(Coffee coffee) {
 		super(MEDIUM_VOLUME, PACK_MASS, coffee);
 	}
 
@@ -28,14 +31,12 @@ public class MediumBag extends Pack {
 		int packPrice = coffeeMassInPack() * super.coffee.getGramPrice();
 		return packPrice;
 	}
-
+	
 	@Override
 	public int summaryMass() {
 		int summaryMass = PACK_MASS + coffeeMassInPack();
 		return summaryMass;
 	}
-	
-
 
 
 }

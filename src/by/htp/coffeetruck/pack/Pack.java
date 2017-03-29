@@ -1,6 +1,6 @@
-package by.htp.pack;
+package by.htp.coffeetruck.pack;
 
-import by.htp.smth.Coffee;
+import by.htp.coffeetruck.entity.Coffee;
 
 public abstract class Pack {
 	private int volume;
@@ -28,7 +28,7 @@ public abstract class Pack {
 
 	@Override
 	public String toString() {
-		return "Pack [volume=" + volume + ", pack price =" + Pack.packPrice() + ", coffee=" + coffee;
+		return "Pack [volume=" + volume + ", pack price =" + this.packPrice() + ", " + coffee;
 	}
 
 	
